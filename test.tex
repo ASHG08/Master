@@ -26,51 +26,12 @@
 \begin{document}
 
 % --- Page de Garde ---
-\begin{titlepage}
-    \centering
-
-    % --- LOGO ---
-    % Remplacez 'logo-sorbonne' par le nom exact de votre fichier image
-    % 'width=0.4\textwidth' ajuste la taille de l'image
-    \includegraphics[width=0.5\textwidth]{logo-sorbonne}
-
-    \vspace{1cm}
-
-    {\Large \textsc{Sorbonne Université}} \\
-    {\Large \textsc{UFR d'Histoire}} \\
-
-    \vfill
-
-    % --- TITRE ---
-    \rule{\linewidth}{0.5mm} \\[0.4cm]
-    {\huge \bfseries Ambroise de Milan et le pouvoir impérial : \\[0.4cm]
-    \Large une pensée et une autorité chrétienne au cœur de l'Empire romain.} \\
-    \rule{\linewidth}{0.5mm} \\[1.5cm]
-
-    % --- AUTEUR ---
-    {\Large \textbf{Aurélien RONDEAU-BODY}} \\[2cm]
-
-    % --- INFOS MASTER ---
-    \begin{flushleft}
-    \large
-    \textbf{Master 1 :} Mondes antiques, spécialité christianisme antique \\
-    \textbf{Mémoire de recherche sous la direction de :} \\
-    Monsieur Jean-Marie SALAMITO, \\
-    Monsieur François-Xavier ROMANACCE \\
-    Monsieur Jonathan CORNILLON
-    \end{flushleft}
-
-    \vfill
-
-    % --- DATE ---
-    {\large Année universitaire 2025-2026}
-
-\end{titlepage}
+\include{Titlepage.tex}
 
 \tableofcontents
 \include{introduction/introduction.tex}
 \include{chapitre1/chapitre1.tex}
-
+\nocite{*}
 \printbibliography
 
 \end{document}
