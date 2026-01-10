@@ -6,7 +6,7 @@
 \usepackage[top=2.5cm, bottom=2.5cm, left=3cm, right=2.5cm]{geometry} % Marges académiques
 \usepackage{setspace}
 \onehalfspacing % Interligne 1.5 obligatoire
-
+\usepackage{import}
 % --- Histoire & Langues Anciennes ---
 \usepackage{libertine} % Police élégante et complète pour le latin/grec
 \usepackage[polutonikogreek,french]{babel} % Pour les citations en grec
@@ -31,6 +31,7 @@
 \tableofcontents
 \include{introduction/introduction.tex}
 \include{chapitre1/chapitre1.tex}
+\import{chapitre2/}{chapitre2}
 \nocite{*}
 \printbibliography
 
