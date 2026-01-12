@@ -4,6 +4,5 @@
     "command": "latexmk -pdf -pvc -view=none -interaction=nonstopmode $ZED_FILE",
     "use_new_terminal": true,
     "allow_concurrent_runs": false,
-    "soft_wrap": "editor_width", // Pour avoir un retour à la ligne automatique
   },
 ]
