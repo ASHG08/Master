@@ -12,9 +12,8 @@
 
 % 1. Pour afficher les numéros jusqu'aux \subsubsection
 \setcounter{secnumdepth}{3}
-% (Par défaut c'est 2, donc ça s'arrête aux subsections)
 
-% 2. Pour retirer le numéro du chapitre (le "3.") devant les sections
+% 2. Pour retirer le numéro du chapitre devant les sections
 \renewcommand{\thesection}{\arabic{section}}
 \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
 
@@ -24,6 +23,10 @@
 
 % --- Espacement entre les notes de bas de page ---
 \setlength{\footnotesep}{1.5em} % Ajustez la valeur (1em, 1.5em, 5mm...)
+
+% --- Personnalisation des titres ---
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\Large\bfseries\scshape}{\thesection}{1em}{}
 
 % --- Histoire & Langues Anciennes ---
 \usepackage{libertine} % Police élégante et complète pour le latin/grec
@@ -56,7 +59,7 @@
 \nocite{*}
 % --- Bibliographie Divisée ---
 
-% Titre général de la section (optionnel, sinon ça mettra juste les sous-titres)
+% Titre général de la section
 \chapter*{Bibliographie}
 \addcontentsline{toc}{chapter}{Bibliographie}
 
