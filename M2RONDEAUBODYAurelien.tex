@@ -1,0 +1,83 @@
+\documentclass[12pt, a4paper, oneside]{book}
+
+% --- Paquets de base ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[top=2.5cm, bottom=2.5cm, left=3cm, right=2.5cm]{geometry} % Marges académiques
+\usepackage{setspace}
+\onehalfspacing % Interligne 1.5 obligatoire
+\usepackage{import}
+
+% --- Personnalisation de la numérotation ---
+
+% 1. Pour afficher les numéros jusqu'aux \subsubsection
+\setcounter{secnumdepth}{3}
+
+% 2. Pour retirer le numéro du chapitre devant les sections
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+
+% --- Commandes sémantiques ---
+\newcommand{\latin}[1]{\textit{#1}}       % Pour les mots latins
+\newcommand{\oeuvre}[1]{\textit{#1}}      % Pour les titres d'oeuvres
+
+% --- Espacement entre les notes de bas de page ---
+\setlength{\footnotesep}{1.5em} % Ajustez la valeur (1em, 1.5em, 5mm...)
+
+% --- Personnalisation des titres ---
+\usepackage{titlesec}
+% --- STYLE ROMAIN ---
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries\centering} % Tout centré, police normale, gras
+  {\textsc{\chaptertitlename} \thechapter} % "CHAPITRE 1" en petites capitales
+  {20pt} % Espace entre "Chapitre 1" et le titre
+  {\Huge} % Le titre en très gros
+
+\titlespacing*{\chapter}{0pt}{50pt}{40pt} % Espaces (Gauche, Haut, Bas)
+
+% --- Histoire & Langues Anciennes ---
+\usepackage{libertine} % Police élégante et complète pour le latin/grec
+\usepackage[polutonikogreek,french]{babel} % Pour les citations en grec
+\newcommand{\gr}[1]{\foreignlanguage{greek}{#1}}
+\usepackage{graphicx}
+% --- Bibliographie (Style Sorbonne / École Française de Rome) ---
+\usepackage{csquotes}
+\usepackage[
+    backend=biber,
+    style=verbose-ibid,    % Style standard présent partout
+    language=french,       % Force la traduction des termes (éd., vol., etc.)
+    ibidtracker=constrict,
+    autocite=footnote
+]{biblatex}
+\addbibresource{bibliographie.bib}
+\usepackage{microtype}
+% --- Espacement de la bibliographie ---
+\setlength{\bibitemsep}{1em}
+\begin{document}
+
+% --- Page de Garde ---
+\include{Titlepage.tex}
+
+\tableofcontents
+\include{introduction/introduction}
+\include{chapitre1/chapitre1}
+\include{chapitre2/chapitre2}
+\include{chapitre3/chapitre3}
+\include{conclusion/conclusion}
+\nocite{*}
+% --- Bibliographie Divisée ---
+
+% Titre général de la section
+\chapter*{Bibliographie}
+\addcontentsline{toc}{chapter}{Bibliographie}
+
+% 1. Les Sources
+\printbibliography[keyword=source, title={Sources}, heading=subbibliography]
+
+% 2. Les Dictionnaires
+\printbibliography[keyword=outil, title={Dictionnaires et Outils de recherche}, heading=subbibliography]
+
+% 3. Les Études
+\printbibliography[keyword=etude, title={Études}, heading=subbibliography]
+
+\end{document}
