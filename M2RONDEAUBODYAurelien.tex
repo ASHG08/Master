@@ -49,6 +49,18 @@
     ibidtracker=constrict,
     autocite=footnote
 ]{biblatex}
+% --- MODIFICATIONS DE LA PONCTUATION (Virgules partout) ---
+\renewcommand*{\newunitpunct}{\addcomma\space}
+
+\renewbibmacro*{publisher+location+date}{%
+  \printlist{location}%
+  \iflistundef{publisher}
+    {\setunit*{\addcomma\space}}
+    {\setunit*{\addcomma\space}}%
+  \printlist{publisher}%
+  \setunit*{\addcomma\space}%
+  \usebibmacro{date}%
+  \newunit}
 \addbibresource{bibliographie.bib}
 \usepackage{microtype}
 % --- Espacement de la bibliographie ---
